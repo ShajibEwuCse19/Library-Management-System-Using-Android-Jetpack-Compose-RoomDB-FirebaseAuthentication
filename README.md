@@ -33,16 +33,20 @@ To run this project locally, follow these steps:
     <img src="images/Screenshot from 2024-04-21 00-54-24.png" width="200" alt="Screenshot 2">
     <img src="images/Screenshot from 2024-04-21 00-57-14.png" width="200" alt="Screenshot 3">
     <img src="images/Screenshot from 2024-04-21 01-02-17.png" width="200" alt="Screenshot 4">
-    <img src="images/Screenshot from 2024-04-21 00-55-15.png" width="200" alt="Screenshot 5">
 </div>
 
 <div align="center">
+    <img src="images/Screenshot from 2024-04-21 00-55-15.png" width="200" alt="Screenshot 5">
     <img src="images/Screenshot from 2024-04-21 01-02-31.png" width="200" alt="Screenshot 6">
     <img src="images/Screenshot from 2024-04-21 01-02-51.png" width="200" alt="Screenshot 7">
     <img src="images/Screenshot from 2024-04-21 01-03-25.png" width="200" alt="Screenshot 8">
+</div>
+
+<div align="center">
     <img src="images/Screenshot from 2024-04-21 01-03-37.png" width="200" alt="Screenshot 9">
     <img src="images/Screenshot from 2024-04-21 01-19-58.png" width="200" alt="Screenshot 10">
 </div>
+
 
 
 ## License
