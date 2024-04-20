@@ -1,0 +1,36 @@
+<resources>
+    <string name="app_name">Library Management System</string>
+    <string name="Hello">Hey there,</string>
+    <string name="create_account">Create Account</string>
+    <string name="welcome">Welcome</string>
+    <string name="first_name">First Name</string>
+    <string name="last_name">Last Name</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="hide_password">Hide Password</string>
+    <string name="show_password">Show Password</string>
+    <string name="login">Login</string>
+    <string name="register">Register</string>
+    <string name="or">or</string>
+    <string name="forgot_password">Forgot your password?</string>
+    <string name="by_continuing_you_accept_our">"By continuing you accept our "</string>
+    <string name="privacy_policy">Privacy Policy</string>
+    <string name="and">" and "</string>
+    <string name="term_of_use">Term of Use</string>
+    <string name="terms_and_condition_full_text">By continuing you accept our Privacy Policy and Term of Use</string>
+    <string name="terms_and_condition">Terms and Conditions</string>
+    <string name="terms_and_condition_content1">1. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vel quam sit amet purus placerat suscipit. Sed id lorem nec arcu vehicula iaculis. Vivamus vel erat at magna ultricies luctus. Phasellus volutpat, ipsum vel finibus gravida, mi est mattis lorem, eget eleifend metus elit ac turpis. Nam sagittis rhoncus velit, sit amet tempor libero consequat eget. Vivamus volutpat commodo dolor, quis posuere nunc feugiat nec. Vestibulum congue ultricies neque, id vehicula est dapibus quis. Sed lobortis, odio ut malesuada feugiat, libero nulla facilisis purus, nec placerat orci metus ut nisi. In sed eros in felis cursus ultricies.</string>
+    <string name="terms_and_condition_content2">2. Phasellus a enim turpis. Proin id tellus eget ex ullamcorper dictum. Sed nec orci sed lacus rhoncus laoreet vel et risus. Duis tempus bibendum metus, ac iaculis purus. Aliquam sit amet felis eu urna volutpat semper. Phasellus aliquet felis ut ante fermentum, quis sagittis lorem accumsan. Fusce dapibus, lacus vel venenatis tristique, arcu nisl efficitur ante, id fermentum ligula lorem auctor tortor.</string>
+    <string name="terms_and_condition_content3">3. Morbi tincidunt lacus sit amet vehicula vulputate. Nulla consectetur, justo ac lobortis convallis, ipsum lorem posuere leo, ut bibendum purus mauris vel justo. Morbi posuere lorem nec enim fringilla, quis vestibulum elit vehicula. Pellentesque convallis lacinia risus, vel tristique est aliquet sit amet. Sed et volutpat justo. Donec auctor tincidunt ultrices. Sed non nisi a nulla auctor condimentum. Cras nec sem sed justo consectetur tristique. Aliquam quis nisl non quam volutpat vehicula.</string>
+    <string name="already_have_an_account">"Already have an account? "</string>
+    <string name="dont_have_an_account">"Don't have an account? "</string>
+    <string name="home_page">Home</string>
+    <string name="logout">Logout</string>
+    <string name="menu">Menu</string>
+    <string name="logout_button">Logout</string>
+    <string name="available_books">Available Books</string>
+    <string name="hello_sir">Hello Sir</string>
+    <string name="are_you_an_admin">Are you an admin?</string>
+    <string name="login_as_admin">Login as admin</string>
+    <string name="todo_input_bar_hint">Book Name</string>
+</resources>
