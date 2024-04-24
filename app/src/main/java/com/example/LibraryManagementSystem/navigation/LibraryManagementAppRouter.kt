@@ -4,7 +4,7 @@ import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.mutableStateOf
 
 
-sealed class Screen() {
+sealed class Screen {
     object SignUpScreen: Screen()
     object TermsAndConditionScreen: Screen()
     object LogInScreen: Screen()
@@ -19,10 +19,12 @@ sealed class Screen() {
     object ReturnBookScreen: Screen()
     object BookListScreen: Screen()
     object AuthorListScreen: Screen()
+    object AdminBookListScreen: Screen()
+    object EditBook: Screen()
 }
 
 object LibraryManagementAppRouter {
-    val currentScreen: MutableState<Screen> = mutableStateOf(Screen.LogInScreen)
+    val currentScreen: MutableState<Screen> = mutableStateOf(Screen.UpdateBook)
 
     fun navigateTo(destination: Screen) {
         currentScreen.value = destination

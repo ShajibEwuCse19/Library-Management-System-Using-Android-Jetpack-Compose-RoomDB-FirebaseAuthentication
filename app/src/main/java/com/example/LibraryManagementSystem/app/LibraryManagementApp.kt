@@ -12,8 +12,10 @@ import com.example.LibraryManagementSystem.data.homePageAdmin.AdminHomeScreenNav
 import com.example.LibraryManagementSystem.data.homePageUsers.HomeScreenNavDrawer
 import com.example.LibraryManagementSystem.navigation.LibraryManagementAppRouter
 import com.example.LibraryManagementSystem.navigation.Screen
+import com.example.LibraryManagementSystem.screens.AdminHomePageNavDrawerScreens.AdminBookListScreen
 import com.example.LibraryManagementSystem.screens.AdminHomePageNavDrawerScreens.CreateBook
 import com.example.LibraryManagementSystem.screens.AdminHomePageNavDrawerScreens.DeleteBook
+import com.example.LibraryManagementSystem.screens.AdminHomePageNavDrawerScreens.EditBook
 import com.example.LibraryManagementSystem.screens.AdminHomePageNavDrawerScreens.UpdateBook
 import com.example.LibraryManagementSystem.screens.AdminLoginScreen
 import com.example.LibraryManagementSystem.screens.LogInScreen
@@ -70,7 +72,7 @@ fun LibraryManagementApp(mainViewModel: MainViewModel = viewModel()) {
                     DeleteBook(mainViewModel)
                 }
                 is Screen.UpdateBook -> {
-                    UpdateBook()
+                    UpdateBook(mainViewModel)
                 }
                 is Screen.BookListScreen -> {
                     BookListScreen(mainViewModel)
@@ -83,6 +85,12 @@ fun LibraryManagementApp(mainViewModel: MainViewModel = viewModel()) {
                 }
                 is Screen.ReturnBookScreen -> {
                     ReturnBookScreen(mainViewModel)
+                }
+                is Screen.AdminBookListScreen -> {
+                    AdminBookListScreen(mainViewModel)
+                }
+                is Screen.EditBook -> {
+                    EditBook(mainViewModel)
                 }
             }
         }

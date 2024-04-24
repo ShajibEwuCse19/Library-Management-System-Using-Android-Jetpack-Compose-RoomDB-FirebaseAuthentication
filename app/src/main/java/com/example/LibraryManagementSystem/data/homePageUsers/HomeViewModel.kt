@@ -52,4 +52,7 @@ class HomeViewModel : ViewModel() {
     fun returnBook() {
         LibraryManagementAppRouter.navigateTo(Screen.ReturnBookScreen)
     }
+    fun adminBookList() {
+        LibraryManagementAppRouter.navigateTo(Screen.AdminBookListScreen)
+    }
 }

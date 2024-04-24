@@ -38,6 +38,7 @@ import com.example.LibraryManagementSystem.navigation.Screen
 
 @Composable
 fun LogInScreen(loginViewModel: LoginViewModel = viewModel()) {
+    var maxSize = Modifier.fillMaxSize()
     Box(
         modifier = Modifier
             .fillMaxSize(),

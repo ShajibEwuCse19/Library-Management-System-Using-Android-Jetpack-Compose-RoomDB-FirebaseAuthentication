@@ -3,7 +3,6 @@ package com.example.LibraryManagementSystem.data.bookRoomDatabase
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.CoroutineDispatcher
-import kotlinx.coroutines.flow.toList
 import kotlinx.coroutines.launch
 
 class MainViewModel(
@@ -17,10 +16,26 @@ class MainViewModel(
 
 
     // 3. Todo Operations
-    fun addTodo(title1: String, author1: String) =
+    fun addTodo(
+        title: String,
+        author: String,
+        publisher: String,
+        isbn: String,
+        price: String,
+        noOfPage: String
+    ) =
         viewModelScope.launch(ioDispatcher) {
-            if (title1.trim().isNotEmpty() && author1.trim().isNotEmpty())
-                repository.insert(TodoItem(title = title1, author = author1))
+            if (title.trim().isNotEmpty() && author.trim().isNotEmpty() && publisher.trim()
+                    .isNotEmpty()
+                && isbn.trim().isNotEmpty() && price.trim().isNotEmpty() && noOfPage.trim()
+                    .isNotEmpty()
+            )
+                repository.insert(
+                    TodoItem(
+                        title = title, author = author, publisher = publisher, isbn = isbn,
+                        price = price, noOfPage = noOfPage
+                    )
+                )
         }
 
     fun toggleTodo(todoItem: TodoItem) = viewModelScope.launch(ioDispatcher) {
@@ -31,4 +46,10 @@ class MainViewModel(
         repository.delete(todoItem)
     }
 
+    // 4. Update Todo
+    fun updateTodo(todoItem: TodoItem) = viewModelScope.launch(ioDispatcher) {
+        if (todoItem.id != 0) { // Check if the todoItem has a valid id
+            repository.update(todoItem)
+        }
+    }
 }

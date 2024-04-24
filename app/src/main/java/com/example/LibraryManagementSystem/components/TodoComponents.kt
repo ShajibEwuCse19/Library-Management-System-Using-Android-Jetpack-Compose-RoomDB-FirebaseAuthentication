@@ -2,7 +2,6 @@ package com.example.LibraryManagementSystem.components
 
 import android.widget.Toast
 import androidx.compose.foundation.background
-import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -18,7 +17,6 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
-import androidx.compose.material.icons.filled.ShoppingCart
 import androidx.compose.material.icons.outlined.Delete
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
@@ -45,7 +43,6 @@ import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.unit.dp
 import com.example.LibraryManagementSystem.data.bookRoomDatabase.TodoItem
 import com.example.LibraryManagementSystem.ui.theme.constants.AccentColor
-import com.example.LibraryManagementSystem.ui.theme.constants.GrayColor
 import com.example.LibraryManagementSystem.ui.theme.constants.TextColor
 import kotlinx.coroutines.flow.Flow
 
@@ -57,19 +54,18 @@ val books = arrayListOf("")
 @Composable
 fun TodoInputBar(
     modifier: Modifier = Modifier,
-    onAddButtonClick: (String, String) -> Unit
+    onAddButtonClick: (String, String, String, String, String, String) -> Unit,
 ) {
-    var newTodoText by remember {
-        mutableStateOf("")
-    }
-    var authorName by remember {
-        mutableStateOf("")
-    }
+    var newTodoText by remember { mutableStateOf("") }
+    var authorName by remember { mutableStateOf("") }
+    var publisherName by remember { mutableStateOf("") }
+    var isbnNo by remember { mutableStateOf("") }
+    var price by remember { mutableStateOf("") }
+    var pages by remember { mutableStateOf("") }
     val context = LocalContext.current
     Column(
         modifier = modifier.fillMaxWidth()
     ) {
-        // Awesome text field for entering new todo item
         TextField(
             modifier = Modifier
                 .padding(5.dp)
@@ -79,7 +75,7 @@ fun TodoInputBar(
             onValueChange = {
                 newTodoText = it
             },
-            label = { Text("Enter Book Name") },
+            label = { Text("Book Name") },
             textStyle = TextStyle(
                 color = TextColor
             ),
@@ -100,7 +96,93 @@ fun TodoInputBar(
             onValueChange = {
                 authorName = it
             },
-            label = { Text("Enter Author Name") },
+            label = { Text("Author Name") },
+            textStyle = TextStyle(
+                color = TextColor
+            ),
+            colors = TextFieldDefaults.textFieldColors(
+                cursorColor = Color.Black,
+                focusedIndicatorColor = Color.Transparent,
+                unfocusedIndicatorColor = Color.Transparent
+            ),
+            keyboardOptions = KeyboardOptions(imeAction = ImeAction.Next),
+            maxLines = 1
+        )
+
+        TextField(
+            modifier = Modifier
+                .padding(5.dp)
+                .fillMaxWidth()
+                .background(Color.LightGray),
+            value = publisherName,
+            onValueChange = {
+                publisherName = it
+            },
+            label = { Text("Publisher Name") },
+            textStyle = TextStyle(
+                color = TextColor
+            ),
+            colors = TextFieldDefaults.textFieldColors(
+                cursorColor = Color.Black,
+                focusedIndicatorColor = Color.Transparent,
+                unfocusedIndicatorColor = Color.Transparent
+            ),
+            keyboardOptions = KeyboardOptions(imeAction = ImeAction.Next),
+            maxLines = 1
+        )
+
+        TextField(
+            modifier = Modifier
+                .padding(5.dp)
+                .fillMaxWidth()
+                .background(Color.LightGray),
+            value = isbnNo,
+            onValueChange = {
+                isbnNo = it
+            },
+            label = { Text("ISBN") },
+            textStyle = TextStyle(
+                color = TextColor
+            ),
+            colors = TextFieldDefaults.textFieldColors(
+                cursorColor = Color.Black,
+                focusedIndicatorColor = Color.Transparent,
+                unfocusedIndicatorColor = Color.Transparent
+            ),
+            keyboardOptions = KeyboardOptions(imeAction = ImeAction.Next),
+            maxLines = 1
+        )
+        TextField(
+            modifier = Modifier
+                .padding(5.dp)
+                .fillMaxWidth()
+                .background(Color.LightGray),
+            value = price,
+            onValueChange = {
+                price = it
+            },
+            label = { Text("Price") },
+            textStyle = TextStyle(
+                color = TextColor
+            ),
+            colors = TextFieldDefaults.textFieldColors(
+                cursorColor = Color.Black,
+                focusedIndicatorColor = Color.Transparent,
+                unfocusedIndicatorColor = Color.Transparent
+            ),
+            keyboardOptions = KeyboardOptions(imeAction = ImeAction.Next),
+            maxLines = 1
+        )
+        TextField(
+            modifier = Modifier
+                .padding(5.dp)
+                .fillMaxWidth()
+                .background(Color.LightGray),
+            value = pages,
+            onValueChange = {
+                pages = it
+            },
+            label = { Text("Total Page") },
             textStyle = TextStyle(
                 color = TextColor
             ),
@@ -112,24 +194,36 @@ fun TodoInputBar(
             keyboardOptions = KeyboardOptions(imeAction = ImeAction.Done),
             maxLines = 1
         )
-        // Awesome button to add new todo item
+
+        //add new book button
         Button(
             onClick = {
-                onAddButtonClick(newTodoText, authorName)
-                if (newTodoText.trim().isNotEmpty() && authorName.trim().isNotEmpty())
+                onAddButtonClick(newTodoText, authorName, publisherName, isbnNo, price, pages)
+                if (newTodoText.trim().isNotEmpty() && authorName.trim()
+                        .isNotEmpty() && publisherName.trim().isNotEmpty()
+                    && isbnNo.trim().isNotEmpty() && price.trim().isNotEmpty() && pages.trim()
+                        .isNotEmpty()
+                ) {
                     Toast.makeText(context, "Successfully added the book", Toast.LENGTH_SHORT)
                         .show()
-                else Toast.makeText(context, "Enter valid book or author name", Toast.LENGTH_SHORT)
-                    .show()
-                books.add(newTodoText)
+                } else {
+                    Toast.makeText(context, "Enter valid book or author name", Toast.LENGTH_SHORT)
+                        .show()
+                }
                 newTodoText = ""
                 authorName = ""
+                publisherName = ""
+                isbnNo = ""
+                price = ""
+                pages = ""
             },
+            enabled = newTodoText.isNotBlank() && authorName.isNotBlank() && publisherName.isNotBlank() &&
+                    isbnNo.isNotBlank() && price.isNotBlank() && pages.isNotBlank(),
             modifier = Modifier
                 .padding(top = 8.dp)
                 .fillMaxWidth(),
             colors = ButtonDefaults.buttonColors(
-                contentColor = Color.White // Customize button text color
+                contentColor = Color.White
             )
         ) {
             Text("Add New Book")
@@ -163,13 +257,10 @@ fun TodoItemRow(
     onItemDelete: (TodoItem) -> Unit
 ) {
     val context = LocalContext.current
-    // Placeholder for displaying an individual todo item
-    // You can customize this composable to display the todo item's content
     Row(
         modifier = Modifier
             .padding(horizontal = 16.dp, vertical = 8.dp)
             .fillMaxWidth()
-            .border(width = 2.dp, color = GrayColor, shape = RoundedCornerShape(8.dp))
             .padding(8.dp)
             .background(AccentColor, shape = RoundedCornerShape(8.dp)),
         verticalAlignment = Alignment.CenterVertically,
@@ -213,9 +304,6 @@ fun TodoItemRow(
         }
     }
 }
-
-
-
 @Composable
 fun PlusButton(onClick: () -> Unit) {
     Column(

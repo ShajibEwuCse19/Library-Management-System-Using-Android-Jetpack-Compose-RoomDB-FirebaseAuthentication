@@ -30,8 +30,8 @@ import com.example.LibraryManagementSystem.components.HeadingTextComponent
 import com.example.LibraryManagementSystem.components.MyTextField
 import com.example.LibraryManagementSystem.components.NormalTextComponent
 import com.example.LibraryManagementSystem.components.PasswordTextFieldComponent
-import com.example.LibraryManagementSystem.data.signup.SignupViewModel
 import com.example.LibraryManagementSystem.data.signup.SignupUiEvent
+import com.example.LibraryManagementSystem.data.signup.SignupViewModel
 import com.example.LibraryManagementSystem.navigation.LibraryManagementAppRouter
 import com.example.LibraryManagementSystem.navigation.Screen
 import com.example.LibraryManagementSystem.navigation.SystemBackButtonHandler

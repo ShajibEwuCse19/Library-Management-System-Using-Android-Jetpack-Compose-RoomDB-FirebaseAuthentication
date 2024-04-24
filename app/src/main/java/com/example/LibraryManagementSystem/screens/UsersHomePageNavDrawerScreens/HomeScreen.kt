@@ -3,6 +3,7 @@ package com.example.LibraryManagementSystem.screens.UsersHomePageNavDrawerScreen
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -15,8 +16,11 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.LibraryManagementSystem.components.HeadingTextComponent
 import com.example.LibraryManagementSystem.components.CartButton
+import com.example.LibraryManagementSystem.components.LargeTextButton
 import com.example.LibraryManagementSystem.components.books
 import com.example.LibraryManagementSystem.data.homePageUsers.HomeViewModel
+import com.example.LibraryManagementSystem.navigation.LibraryManagementAppRouter
+import com.example.LibraryManagementSystem.navigation.Screen
 import com.example.LibraryManagementSystem.screens.BookList
 
 @Composable
@@ -30,16 +34,29 @@ fun HomeScreen(homeViewModel: HomeViewModel = viewModel()) {
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.SpaceBetween
         ) {
-            Box(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(top = 20.dp)
-            ){
-                Column {
-                    HeadingTextComponent(value = "Recently Added Books")
-                    Spacer(modifier = Modifier.padding(top = 20.dp))
+            Row(
+                modifier = Modifier.padding(5.dp),
+                horizontalArrangement = Arrangement.SpaceEvenly,
+                verticalAlignment = Alignment.CenterVertically
 
-                    if (books.isNotEmpty()) BookList(books = books)
+            ) {
+                LargeTextButton(textValue = "  Checkout ") {
+                    LibraryManagementAppRouter.navigateTo(Screen.CheckoutBookScreen)
+                }
+                LargeTextButton(textValue = "   Return   ") {
+                    LibraryManagementAppRouter.navigateTo(Screen.ReturnBookScreen)
+                }
+            }
+            Row(
+                modifier = Modifier.padding(5.dp).padding(bottom = 250.dp),
+                horizontalArrangement = Arrangement.SpaceEvenly,
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                LargeTextButton(textValue = " Book List ") {
+                    LibraryManagementAppRouter.navigateTo(Screen.BookListScreen)
+                }
+                LargeTextButton(textValue = "Author List") {
+                    LibraryManagementAppRouter.navigateTo(Screen.AuthorListScreen)
                 }
             }
 

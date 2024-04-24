@@ -8,6 +8,7 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.AddCircle
+import androidx.compose.material.icons.filled.Book
 import androidx.compose.material.icons.filled.Build
 import androidx.compose.material.icons.filled.Delete
 import androidx.compose.material.icons.filled.Home
@@ -129,8 +130,8 @@ fun AdminHomeScreenNavDrawer(homeViewModel: HomeViewModel = viewModel()) {
                         coroutineScope.launch {
                             drawerState.close()
                         }
-                        //homeViewModel.AdminUpdateBook()
-                        homeViewModel.AdminAddBook()
+                        homeViewModel.AdminUpdateBook()
+                        //homeViewModel.AdminAddBook()
                     }
                 )
                 //Delete book
@@ -149,6 +150,25 @@ fun AdminHomeScreenNavDrawer(homeViewModel: HomeViewModel = viewModel()) {
                             drawerState.close()
                         }
                         homeViewModel.AdminDeleteBook()
+                        //homeViewModel.AdminAddBook()
+                    }
+                )
+                // book list
+                NavigationDrawerItem(
+                    label = { Text(text = "Book List", color = MaterialTheme.colorScheme.primary) },
+                    selected = false,
+                    icon = {
+                        Icon(
+                            imageVector = Icons.Default.Book,
+                            contentDescription = "delete",
+                            tint = MaterialTheme.colorScheme.primary
+                        )
+                    },
+                    onClick = {
+                        coroutineScope.launch {
+                            drawerState.close()
+                        }
+                        homeViewModel.adminBookList()
                         //homeViewModel.AdminAddBook()
                     }
                 )

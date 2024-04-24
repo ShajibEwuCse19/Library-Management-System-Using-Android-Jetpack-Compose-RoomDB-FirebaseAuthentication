@@ -11,9 +11,11 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
-import com.example.LibraryManagementSystem.data.bookRoomDatabase.MainViewModel
+import com.example.LibraryManagementSystem.components.HeadingTextComponent
 import com.example.LibraryManagementSystem.components.TodoInputBar
 import com.example.LibraryManagementSystem.components.TodoItemsContainer
+import com.example.LibraryManagementSystem.components.TopAppBarWithBackButton
+import com.example.LibraryManagementSystem.data.bookRoomDatabase.MainViewModel
 import com.example.LibraryManagementSystem.navigation.LibraryManagementAppRouter
 import com.example.LibraryManagementSystem.navigation.Screen
 import com.example.LibraryManagementSystem.navigation.SystemBackButtonHandler
@@ -21,23 +23,20 @@ import com.example.LibraryManagementSystem.navigation.SystemBackButtonHandler
 @Composable
 fun CreateBook(mainViewModel: MainViewModel = viewModel()) {
     Box(
-        modifier = Modifier.fillMaxSize()
+        modifier = Modifier
+            .fillMaxSize()
     ) {
         Column {
+            TopAppBarWithBackButton(textValue = "Add Book") {
+                LibraryManagementAppRouter.navigateTo(Screen.AdminHomeScreenNavDrawer)
+            }
+            HeadingTextComponent(value = "Enter Book Information")
             TodoInputBar(
                 modifier = Modifier
                     .fillMaxWidth()
                     .padding(20.dp),
                 onAddButtonClick = mainViewModel::addTodo
             )
-            Divider()
-            TodoItemsContainer(
-                todoItemsFlow = mainViewModel.todos,
-                // 3. Method Reference Expression
-                onItemClick = mainViewModel::toggleTodo,
-                onItemDelete = mainViewModel::removeTodo,
-            )
-
         }
     }
     SystemBackButtonHandler {

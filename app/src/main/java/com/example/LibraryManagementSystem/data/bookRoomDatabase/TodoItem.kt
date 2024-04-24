@@ -9,5 +9,9 @@ data class TodoItem(
     val id: Int = 0,
     val title: String,
     val author: String,
+    val publisher: String,
+    val isbn: String,
+    val price: String,
+    val noOfPage: String,
     var isDone: Boolean = false
 )

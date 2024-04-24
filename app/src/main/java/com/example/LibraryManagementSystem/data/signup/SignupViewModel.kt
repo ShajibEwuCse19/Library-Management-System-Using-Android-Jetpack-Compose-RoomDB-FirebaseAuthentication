@@ -7,7 +7,6 @@ import com.example.LibraryManagementSystem.data.rules.Validator
 import com.example.LibraryManagementSystem.navigation.LibraryManagementAppRouter
 import com.example.LibraryManagementSystem.navigation.Screen
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.FirebaseAuth.AuthStateListener
 
 class SignupViewModel : ViewModel() {
     private val TAG = SignupViewModel::class.simpleName
