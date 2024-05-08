@@ -34,8 +34,8 @@ fun UpdateBook(mainViewModel: MainViewModel = viewModel()) {
 
     Box(modifier = Modifier.fillMaxSize()) {
         Column(modifier = Modifier.fillMaxSize()) {
-            TopAppBarWithBackButton(textValue = stringResource(R.string.book_list)) {
-                LibraryManagementAppRouter.navigateTo(Screen.AdminHomeScreenNavDrawer)
+            TopAppBarWithBackButton(textValue = "Edit Book Information") {
+                LibraryManagementAppRouter.navigateTo(Screen.AdminHomeScreen)
             }
             AdminUpdateBookListContainer(
                 todoItemsFlow = mainViewModel.todos,
@@ -60,7 +60,7 @@ fun UpdateBook(mainViewModel: MainViewModel = viewModel()) {
         }
     }
     SystemBackButtonHandler {
-        LibraryManagementAppRouter.navigateTo(Screen.AdminHomeScreenNavDrawer)
+        LibraryManagementAppRouter.navigateTo(Screen.AdminHomeScreen)
     }
 }
 

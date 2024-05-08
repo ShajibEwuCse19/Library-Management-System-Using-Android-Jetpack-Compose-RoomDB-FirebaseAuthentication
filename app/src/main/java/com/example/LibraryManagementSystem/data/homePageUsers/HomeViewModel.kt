@@ -19,7 +19,7 @@ class HomeViewModel : ViewModel() {
             if (it.currentUser == null) {
                 Log.d(TAG, "Inside sign-out success.")
 
-                LibraryManagementAppRouter.navigateTo(Screen.LogInScreen)
+                LibraryManagementAppRouter.navigateTo(Screen.SignUpScreen)
             } else {
                 Log.d(TAG, "Sign-out is not complete.")
             }

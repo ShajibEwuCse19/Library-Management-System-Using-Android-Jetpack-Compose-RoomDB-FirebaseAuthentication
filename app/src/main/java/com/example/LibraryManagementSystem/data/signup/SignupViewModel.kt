@@ -19,28 +19,28 @@ class SignupViewModel : ViewModel() {
         when (event) {
             is SignupUiEvent.FirstNameChanged -> {
                 signupUiState.value = signupUiState.value.copy(
-                    firstName = event.firstName
+                    firstName = event.firstName.trim()
                 )
                 printState()
             }
 
             is SignupUiEvent.LastNameChanged -> {
                 signupUiState.value = signupUiState.value.copy(
-                    lastName = event.lastName
+                    lastName = event.lastName.trim()
                 )
                 printState()
             }
 
             is SignupUiEvent.EmailChanged -> {
                 signupUiState.value = signupUiState.value.copy(
-                    email = event.email
+                    email = event.email.trim()
                 )
                 printState()
             }
 
             is SignupUiEvent.PasswordChanged -> {
                 signupUiState.value = signupUiState.value.copy(
-                    password = event.password
+                    password = event.password.trim()
                 )
                 printState()
             }
@@ -69,14 +69,11 @@ class SignupViewModel : ViewModel() {
 
     private fun validateDataWithRules() {
         //taking the result validation(error or not) based on validator rules
-        val fNameResult = Validator.validateFirstName(fName = signupUiState.value.firstName)
-        val lNameResult = Validator.validateLastName(lName = signupUiState.value.lastName)
-        val emailResult = Validator.validateEmail(email = signupUiState.value.email)
-        val passwordResult =
-            Validator.validatePassword(password = signupUiState.value.password)
-        val privacyPolicyResult = Validator.validatePrivacyPolicyAcceptance(
-            statusValue = signupUiState.value.privacyPolicyAccepted
-        )
+        val fNameResult = Validator.validateFirstName(fName = signupUiState.value.firstName.trim())
+        val lNameResult = Validator.validateLastName(lName = signupUiState.value.lastName.trim())
+        val emailResult = Validator.validateEmail(email = signupUiState.value.email.trim())
+        val passwordResult = Validator.validatePassword(password = signupUiState.value.password.trim())
+        val privacyPolicyResult = Validator.validatePrivacyPolicyAcceptance(statusValue = signupUiState.value.privacyPolicyAccepted)
 
         //output result on logcat
         Log.d(TAG, "Inside_validateDataWithRules")
@@ -96,8 +93,7 @@ class SignupViewModel : ViewModel() {
         )
 
         //if all okay, then it will be true, register button will be worked, else it will not work (false)
-        allValidationPassed.value =
-            (fNameResult.status && lNameResult.status && emailResult.status
+        allValidationPassed.value = (fNameResult.status && lNameResult.status && emailResult.status
                     && passwordResult.status && privacyPolicyResult.status)
     }
 

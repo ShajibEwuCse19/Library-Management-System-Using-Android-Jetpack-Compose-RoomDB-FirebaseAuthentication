@@ -4,9 +4,7 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -14,14 +12,11 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
-import com.example.LibraryManagementSystem.components.HeadingTextComponent
 import com.example.LibraryManagementSystem.components.CartButton
 import com.example.LibraryManagementSystem.components.LargeTextButton
-import com.example.LibraryManagementSystem.components.books
 import com.example.LibraryManagementSystem.data.homePageUsers.HomeViewModel
 import com.example.LibraryManagementSystem.navigation.LibraryManagementAppRouter
 import com.example.LibraryManagementSystem.navigation.Screen
-import com.example.LibraryManagementSystem.screens.BookList
 
 @Composable
 fun HomeScreen(homeViewModel: HomeViewModel = viewModel()) {
@@ -35,34 +30,42 @@ fun HomeScreen(homeViewModel: HomeViewModel = viewModel()) {
             verticalArrangement = Arrangement.SpaceBetween
         ) {
             Row(
-                modifier = Modifier.padding(5.dp),
-                horizontalArrangement = Arrangement.SpaceEvenly,
-                verticalAlignment = Alignment.CenterVertically
-
-            ) {
-                LargeTextButton(textValue = "  Checkout ") {
-                    LibraryManagementAppRouter.navigateTo(Screen.CheckoutBookScreen)
-                }
-                LargeTextButton(textValue = "   Return   ") {
-                    LibraryManagementAppRouter.navigateTo(Screen.ReturnBookScreen)
-                }
-            }
-            Row(
-                modifier = Modifier.padding(5.dp).padding(bottom = 250.dp),
+                modifier = Modifier
+                    .padding(5.dp),
                 horizontalArrangement = Arrangement.SpaceEvenly,
                 verticalAlignment = Alignment.CenterVertically
             ) {
-                LargeTextButton(textValue = " Book List ") {
+                LargeTextButton(textValue = "   Book List   ") {
                     LibraryManagementAppRouter.navigateTo(Screen.BookListScreen)
                 }
-                LargeTextButton(textValue = "Author List") {
+                LargeTextButton(textValue = "  Author List  ") {
                     LibraryManagementAppRouter.navigateTo(Screen.AuthorListScreen)
                 }
             }
 
-            CartButton(onClick = {
-                homeViewModel.checkoutBook()
-            })
+            Row(
+                modifier = Modifier
+                    .padding(5.dp)
+                    .padding(bottom = 250.dp),
+                horizontalArrangement = Arrangement.SpaceEvenly,
+                verticalAlignment = Alignment.CenterVertically
+
+            ) {
+                LargeTextButton(textValue = "Checkoutable") {
+                    LibraryManagementAppRouter.navigateTo(Screen.CheckoutBookScreen)
+                }
+                LargeTextButton(textValue = "  Returnable  ") {
+                    LibraryManagementAppRouter.navigateTo(Screen.ReturnBookScreen)
+                }
+            }
+
+            Row(
+                modifier = Modifier.padding(start = 250.dp, bottom = 16.dp)
+            ) {
+                CartButton(onClick = {
+                    homeViewModel.checkoutBook()
+                })
+            }
         }
     }
 }

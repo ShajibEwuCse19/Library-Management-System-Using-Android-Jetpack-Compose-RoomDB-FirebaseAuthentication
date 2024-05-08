@@ -1,8 +1,11 @@
 package com.example.LibraryManagementSystem.data.login
 
+import android.content.Context
 import android.util.Log
+import android.widget.Toast
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
+import com.example.LibraryManagementSystem.components.ShowToast
 import com.example.LibraryManagementSystem.data.rules.Validator
 import com.example.LibraryManagementSystem.navigation.LibraryManagementAppRouter
 import com.example.LibraryManagementSystem.navigation.Screen
@@ -57,7 +60,7 @@ class LoginViewModel : ViewModel() {
                 //admin login
                 if (it.isSuccessful && loginUiState.value.email == "admin@gmail.com" && loginUiState.value.password == "123456") {
                     loginInProgress.value = false
-                    LibraryManagementAppRouter.navigateTo(Screen.AdminHomeScreenNavDrawer)
+                    LibraryManagementAppRouter.navigateTo(Screen.AdminHomeScreen)
                 }
                 //user login
                 else if (it.isSuccessful) {

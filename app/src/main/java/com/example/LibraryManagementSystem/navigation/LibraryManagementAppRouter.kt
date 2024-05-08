@@ -11,7 +11,6 @@ sealed class Screen {
     object HomeScreen: Screen()
     object HomeScreenNavDrawer: Screen()
     object AdminLoginScreen: Screen()
-    object AdminHomeScreenNavDrawer: Screen()
     object CreateBook: Screen()
     object DeleteBook: Screen()
     object UpdateBook: Screen()
@@ -21,10 +20,11 @@ sealed class Screen {
     object AuthorListScreen: Screen()
     object AdminBookListScreen: Screen()
     object EditBook: Screen()
+    object AdminHomeScreen: Screen()
 }
 
 object LibraryManagementAppRouter {
-    val currentScreen: MutableState<Screen> = mutableStateOf(Screen.UpdateBook)
+    val currentScreen: MutableState<Screen> = mutableStateOf(Screen.LogInScreen)
 
     fun navigateTo(destination: Screen) {
         currentScreen.value = destination

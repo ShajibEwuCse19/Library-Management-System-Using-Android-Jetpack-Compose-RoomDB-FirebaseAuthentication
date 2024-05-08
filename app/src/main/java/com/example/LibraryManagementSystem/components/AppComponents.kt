@@ -1,6 +1,7 @@
 package com.example.LibraryManagementSystem.components
 
 import android.util.Log
+import android.widget.Toast
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.PaddingValues
@@ -12,7 +13,8 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.ClickableText
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Edit
+import androidx.compose.material.icons.filled.Visibility
+import androidx.compose.material.icons.filled.VisibilityOff
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Checkbox
@@ -20,6 +22,7 @@ import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.Divider
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.OutlinedTextFieldDefaults
 import androidx.compose.material3.Text
@@ -35,6 +38,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.SpanStyle
@@ -178,8 +182,13 @@ fun PasswordTextFieldComponent(
             } else {
                 stringResource(id = R.string.password)
             }
+            val imageVectorValue = if (passwordVisible.value) {
+                Icons.Default.VisibilityOff
+            } else {
+                Icons.Default.Visibility
+            }
             IconButton(onClick = { passwordVisible.value = !passwordVisible.value }) {
-                Icon(imageVector = Icons.Filled.Edit, contentDescription = description)
+                Icon(imageVector = imageVectorValue, contentDescription = description)
             }
         },
         visualTransformation = if (passwordVisible.value) VisualTransformation.None else PasswordVisualTransformation(),
@@ -281,23 +290,24 @@ fun ButtonComponent(
             .fillMaxWidth()
             .heightIn(48.dp),
         contentPadding = PaddingValues(),
-        colors = ButtonDefaults.buttonColors(Color.Transparent),
+        colors = ButtonDefaults.buttonColors(MaterialTheme.colorScheme.primary),
         enabled = isEnabled
     ) {
         Box(
             modifier = Modifier
                 .fillMaxWidth()
                 .heightIn(48.dp)
-                .background(
+                /*.background(
                     brush = Brush.horizontalGradient(listOf(Secondary, Primary)),
                     shape = RoundedCornerShape(50.dp)
-                ),
+                )*/,
             contentAlignment = Alignment.Center
         ) {
             Text(
                 text = value,
                 fontSize = 18.sp,
-                fontWeight = FontWeight.Bold
+                fontWeight = FontWeight.Bold,
+                color = MaterialTheme.colorScheme.onPrimary
             )
         }
     }
@@ -474,5 +484,11 @@ fun CircularProgressTimer() {
     if (isLoading) {
         CircularProgressIndicator()
     }
+}
+
+@Composable
+fun ShowToast(message: String) {
+    val context = LocalContext.current
+    Toast.makeText(context, message, Toast.LENGTH_SHORT).show()
 }
 

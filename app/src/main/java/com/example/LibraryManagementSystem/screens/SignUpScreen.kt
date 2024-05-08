@@ -59,7 +59,7 @@ fun SignUpScreen(signupViewModel: SignupViewModel = viewModel()) {
                     labelValue = stringResource(id = R.string.first_name),
                     Icons.Outlined.Person,
                     onTextSelected = {
-                        signupViewModel.onEvent(SignupUiEvent.FirstNameChanged(it))
+                        signupViewModel.onEvent(SignupUiEvent.FirstNameChanged(it.trim()))
                     },
                     signupViewModel.signupUiState.value.firstNameError
                 )
@@ -67,7 +67,7 @@ fun SignUpScreen(signupViewModel: SignupViewModel = viewModel()) {
                     labelValue = stringResource(id = R.string.last_name),
                     Icons.Outlined.Person,
                     onTextSelected = {
-                        signupViewModel.onEvent(SignupUiEvent.LastNameChanged(it))
+                        signupViewModel.onEvent(SignupUiEvent.LastNameChanged(it.trim()))
                     },
                     signupViewModel.signupUiState.value.lastNameError
                 )
@@ -75,7 +75,7 @@ fun SignUpScreen(signupViewModel: SignupViewModel = viewModel()) {
                     labelValue = stringResource(id = R.string.email),
                     Icons.Outlined.Email,
                     onTextSelected = {
-                        signupViewModel.onEvent(SignupUiEvent.EmailChanged(it))
+                        signupViewModel.onEvent(SignupUiEvent.EmailChanged(it.trim()))
                     },
                     signupViewModel.signupUiState.value.emailError
                 )
@@ -83,7 +83,7 @@ fun SignUpScreen(signupViewModel: SignupViewModel = viewModel()) {
                     labelValue = stringResource(id = R.string.password),
                     Icons.Outlined.Lock,
                     onTextSelected = {
-                        signupViewModel.onEvent(SignupUiEvent.PasswordChanged(it))
+                        signupViewModel.onEvent(SignupUiEvent.PasswordChanged(it.trim()))
                     },
                     signupViewModel.signupUiState.value.passwordError
                 )

@@ -35,10 +35,13 @@ import com.example.LibraryManagementSystem.data.login.LoginViewModel
 import com.example.LibraryManagementSystem.navigation.LibraryManagementAppRouter
 import com.example.LibraryManagementSystem.navigation.Screen
 
+object EmailPicker {
+    var email: String = ""
+}
+
 
 @Composable
 fun LogInScreen(loginViewModel: LoginViewModel = viewModel()) {
-    var maxSize = Modifier.fillMaxSize()
     Box(
         modifier = Modifier
             .fillMaxSize(),
@@ -60,6 +63,7 @@ fun LogInScreen(loginViewModel: LoginViewModel = viewModel()) {
                     Icons.Outlined.Email,
                     onTextSelected = {
                         loginViewModel.onEvent(LoginUiEvent.EmailChanged(it))
+                        EmailPicker.email = it
                     },
                     errorStatus = loginViewModel.loginUiState.value.emailError
                 )
