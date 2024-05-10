@@ -3,15 +3,25 @@
 
 ## Overview
 
-This basic project is a Library Management System developed using Android Jetpack Compose and Room Database. It allows users to perform CRUD (Create, Read, Update, Delete) operations on books stored in the database. The app provides an intuitive user interface for managing library resources.
+This project is a Library Management System developed using Android Jetpack Compose, Room Database and Firebase authentication. It allows users to perform CRUD (Create, Read, Update, Delete) operations on books stored in the database. The app provides an intuitive user interface for managing library resources.
 
 ## Features
 
+### Admin
 - Add new books with title and author information
 - View list of all books in the library
 - Update existing book information
 - Delete books from the library
+- Upload book images
+- Camera permission
+- dropdown menu, alert dialog, bottom sheet, nav drawer etc.
 - Firebase authentication (Registration, User login, Admin login)
+
+### Users
+- Checkout Book
+- Return Book
+- View book and author list
+- Authentication
 
 ## Getting Started
 
