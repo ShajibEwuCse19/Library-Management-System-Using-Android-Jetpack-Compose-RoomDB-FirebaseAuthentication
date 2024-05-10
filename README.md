@@ -29,38 +29,35 @@ To run this project locally, follow these steps:
 ## Screenshots
 
 <div align="center">
-    <img src="images/Screenshot from 2024-04-21 00-54-40.png" width="200" alt="Screenshot 1">
-    <img src="images/Screenshot from 2024-04-21 00-54-24.png" width="200" alt="Screenshot 2">
-    <img src="images/Screenshot from 2024-04-21 00-57-14.png" width="200" alt="Screenshot 3">
-    <img src="images/Screenshot from 2024-04-21 01-02-17.png" width="200" alt="Screenshot 4">
+    <img src="images/Screenshot from 2024-05-10 22-10-59.png" width="200" alt="Screenshot 1">
+    <img src="images/Screenshot from 2024-05-10 22-11-17.png" width="200" alt="Screenshot 2">
+    <img src="images/Screenshot from 2024-05-10 22-22-17.png" width="200" alt="Screenshot 3">
+    <img src="images/Screenshot from 2024-05-10 22-26-18.png" width="200" alt="Screenshot 4">
 </div>
 
 <div align="center">
-    <img src="images/Screenshot from 2024-04-21 00-55-15.png" width="200" alt="Screenshot 5">
-    <img src="images/Screenshot from 2024-04-21 01-02-31.png" width="200" alt="Screenshot 6">
-    <img src="images/Screenshot from 2024-04-21 01-02-51.png" width="200" alt="Screenshot 7">
-    <img src="images/Screenshot from 2024-04-21 01-03-25.png" width="200" alt="Screenshot 8">
+    <img src="images/Screenshot from 2024-05-10 22-35-35.png" width="200" alt="Screenshot 5">
+    <img src="images/Screenshot from 2024-05-10 22-40-22.png" width="200" alt="Screenshot 6">
+    <img src="images/Screenshot from 2024-05-10 22-41-27.png" width="200" alt="Screenshot 7">
+    <img src="images/Screenshot from 2024-05-10 22-42-38.png" width="200" alt="Screenshot 8">
 </div>
 
 <div align="center">
-    <img src="images/Screenshot from 2024-04-21 01-03-37.png" width="200" alt="Screenshot 9">
-    <img src="images/Screenshot from 2024-04-21 01-19-58.png" width="200" alt="Screenshot 10">
-    <img src="images/Screenshot from 2024-04-24 02-21-07.png" width="200" alt="Screenshot 11">
-    <img src="images/Screenshot from 2024-04-30 22-39-58.png" width="200" alt="Screenshot 12">
+    <img src="images/Screenshot from 2024-05-10 22-43-20.png" width="200" alt="Screenshot 9">
+    <img src="images/Screenshot from 2024-05-10 22-43-42.png" width="200" alt="Screenshot 10">
+    <img src="images/Screenshot from 2024-05-10 22-44-27.png" width="200" alt="Screenshot 11">
+    <img src="images/Screenshot from 2024-05-10 22-44-38.png" width="200" alt="Screenshot 12">
 </div>
 
 <div align="center">
-    <img src="images/Screenshot from 2024-04-30 22-40-21.png" width="200" alt="Screenshot 13">
-    <img src="images/Screenshot from 2024-04-30 22-41-14.png" width="200" alt="Screenshot 14">
-    <img src="images/Screenshot from 2024-05-06 02-39-10.png" width="200" alt="Screenshot 15">
-    <img src="images/Screenshot from 2024-05-06 04-32-07.png" width="200" alt="Screenshot 16">
+    <img src="images/Screenshot from 2024-05-10 22-45-35.png" width="200" alt="Screenshot 13">
+    <img src="images/Screenshot from 2024-05-10 22-46-32.png" width="200" alt="Screenshot 14">
+    <img src="images/Screenshot from 2024-05-10 22-46-58.png" width="200" alt="Screenshot 15">
+    <img src="images/Screenshot from 2024-05-10 22-53-47.png" width="200" alt="Screenshot 16">
 </div>
 
 <div align="center">
-    <img src="images/Screenshot from 2024-05-06 04-32-21.png" width="200" alt="Screenshot 17">
-    <img src="images/Screenshot from 2024-05-07 19-53-53.png" width="200" alt="Screenshot 18">
-    <img src="images/Screenshot from 2024-05-07 19-54-38.png" width="200" alt="Screenshot 19">
-    <img src="images/Screenshot from 2024-05-07 19-56-22.png" width="200" alt="Screenshot 20">
+    <img src="images/firebaseAuth.PNG" width="200" alt="Screenshot 17">
 </div>
 
 
