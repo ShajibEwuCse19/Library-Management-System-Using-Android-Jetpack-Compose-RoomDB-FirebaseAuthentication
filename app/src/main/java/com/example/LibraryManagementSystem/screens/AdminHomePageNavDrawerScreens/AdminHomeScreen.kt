@@ -68,11 +68,10 @@ fun AdminHomeScreen(mainViewModel: MainViewModel = viewModel()) {
                     todoItem = todo
                 }
             )
-
-            Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.BottomEnd) {
-                MyFloatingActionButton {
-                    LibraryManagementAppRouter.navigateTo(Screen.CreateBook)
-                }
+        }
+        Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.BottomEnd) {
+            MyFloatingActionButton {
+                LibraryManagementAppRouter.navigateTo(Screen.CreateBook)
             }
         }
         //delete alert dialog
