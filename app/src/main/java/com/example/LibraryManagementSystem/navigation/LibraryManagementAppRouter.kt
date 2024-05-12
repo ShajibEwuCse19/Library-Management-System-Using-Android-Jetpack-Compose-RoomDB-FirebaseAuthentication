@@ -4,14 +4,13 @@ import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.mutableStateOf
 
 
-sealed class Screen() {
+sealed class Screen {
     object SignUpScreen: Screen()
     object TermsAndConditionScreen: Screen()
     object LogInScreen: Screen()
     object HomeScreen: Screen()
     object HomeScreenNavDrawer: Screen()
     object AdminLoginScreen: Screen()
-    object AdminHomeScreenNavDrawer: Screen()
     object CreateBook: Screen()
     object DeleteBook: Screen()
     object UpdateBook: Screen()
@@ -19,6 +18,9 @@ sealed class Screen() {
     object ReturnBookScreen: Screen()
     object BookListScreen: Screen()
     object AuthorListScreen: Screen()
+    object AdminBookListScreen: Screen()
+    object EditBook: Screen()
+    object AdminHomeScreen: Screen()
 }
 
 object LibraryManagementAppRouter {

@@ -11,7 +11,7 @@ android {
 
     defaultConfig {
         applicationId = "com.example.LibraryManagementSystem"
-        minSdk = 24
+        minSdk = 25
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
@@ -60,6 +60,8 @@ dependencies {
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
+    implementation(libs.material)
+    implementation(libs.androidx.compose.material)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
@@ -116,5 +118,11 @@ dependencies {
 
     //Extended Icons
     implementation("androidx.compose.material:material-icons-extended:1.6.5")
+
+    //date picker
+    implementation("com.maxkeppeler.sheets-compose-dialogs:core:1.0.2")
+    implementation("com.maxkeppeler.sheets-compose-dialogs:calendar:1.0.2")
+
+    implementation ("io.coil-kt:coil-compose:1.3.2")
 
 }

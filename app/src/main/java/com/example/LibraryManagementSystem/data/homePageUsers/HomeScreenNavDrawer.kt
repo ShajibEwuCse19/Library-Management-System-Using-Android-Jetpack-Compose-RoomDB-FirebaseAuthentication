@@ -12,6 +12,7 @@ import androidx.compose.material.icons.filled.ExitToApp
 import androidx.compose.material.icons.filled.Face
 import androidx.compose.material.icons.filled.Favorite
 import androidx.compose.material.icons.filled.Home
+import androidx.compose.material.icons.filled.Logout
 import androidx.compose.material.icons.filled.ShoppingCart
 import androidx.compose.material.icons.rounded.Menu
 import androidx.compose.material3.Divider
@@ -65,7 +66,9 @@ fun HomeScreenNavDrawer(homeViewModel: HomeViewModel = viewModel()) {
                         .height(150.dp)
                 ) {
                     Text(
-                        modifier = Modifier.padding(top = 40.dp),
+                        modifier = Modifier
+                            .padding(16.dp)
+                            .padding(top = 30.dp),
                         text = "My Bookstore",
                         color = Color.White,
                         textAlign = TextAlign.Start,
@@ -190,7 +193,7 @@ fun HomeScreenNavDrawer(homeViewModel: HomeViewModel = viewModel()) {
                     selected = false,
                     icon = {
                         Icon(
-                            imageVector = Icons.Default.ExitToApp,
+                            imageVector = Icons.Default.Logout,
                             contentDescription = "Logout",
                             tint = Color.Blue
                         )

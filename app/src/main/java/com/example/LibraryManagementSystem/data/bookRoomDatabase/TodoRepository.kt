@@ -12,7 +12,15 @@ class TodoRepository(private val todoDao: TodoDao) {
         todoDao.insert(todo)
     }
 
+    suspend fun update(todo: TodoItem) {
+        todoDao.update(todo)
+    }
+
     suspend fun delete(todo: TodoItem) {
         todoDao.delete(todo)
+    }
+
+    suspend fun getTodoById(id: Int): TodoItem? {
+        return todoDao.getTodoById(id)
     }
 }

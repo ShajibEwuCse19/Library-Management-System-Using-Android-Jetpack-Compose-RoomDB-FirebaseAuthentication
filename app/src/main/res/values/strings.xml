@@ -33,4 +33,5 @@
     <string name="are_you_an_admin">Are you an admin?</string>
     <string name="login_as_admin">Login as admin</string>
     <string name="todo_input_bar_hint">Book Name</string>
+    <string name="book_list">Book List</string>
 </resources>
